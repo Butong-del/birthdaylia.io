@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aulia Ramadhani</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-sans overflow-x-hidden select-none">
+
+    <!-- Audio Background (about-you.mpeg) -->
+    <audio id="bgAudio" src="about-you.mpeg" loop preload="auto"></audio>
+
+    <!-- Flash Effect for Camera -->
+    <div id="cameraFlash" class="fixed inset-0 bg-white opacity-0 pointer-events-none z-50 transition-opacity duration-300"></div>
+
+    <!-- Container Utama Multi-Slide -->
+    <div id="app" class="relative w-full min-h-screen">
+
+        <!-- SLIDE 1: INTRO / LANDING SCREEN -->
+        <section id="slide1" class="slide active-slide min-h-screen flex flex-col justify-between items-center py-10 px-4 bg-gradient-to-r from-black via-purple-950 to-pink-600 relative cursor-pointer">
+            <!-- Header Disney Style -->
+            <div class="text-center mt-6 z-10">
+                <h1 class="font-disney text-4xl sm:text-6xl text-pink-200 drop-shadow-[0_0_15px_rgba(236,72,153,0.8)] tracking-wider">
+                    Tekan Amplop
+                </h1>
+            </div>
+
+            <!-- Main Envelope Element -->
+            <div id="envelopeContainer" class="relative my-auto flex justify-center items-center group">
+                <div class="envelope-box w-64 h-44 sm:w-80 sm:h-52 bg-slate-100 rounded-lg shadow-[0_10px_35px_rgba(236,72,153,0.4)] relative flex items-center justify-center border border-pink-100 transform transition duration-500 group-hover:scale-105">
+                    <!-- Envelope Flap Cover -->
+                    <div class="absolute inset-0 border-t-[88px] sm:border-t-[104px] border-t-slate-200 border-x-[128px] sm:border-x-[160px] border-x-transparent border-b-0 top-0 rounded-t-lg origin-top transition-transform duration-700 pointer-events-none z-10" id="envelopeFlap"></div>
+                    <!-- Wax Seal -->
+                    <div class="wax-seal w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-purple-900 via-indigo-950 to-purple-800 border-2 border-purple-400 shadow-[0_0_15px_rgba(147,51,234,0.8)] flex items-center justify-center z-20 cursor-pointer">
+                        <i class="fa-solid fa-heart text-pink-400 text-xl animate-pulse"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtitle info -->
+            <div class="text-center mb-6 z-10">
+                <p class="text-sm sm:text-base text-pink-200/80 animate-pulse font-light"></p>
+            </div>
+        </section>
+
+
+        <!-- SLIDE 2: HAPPY BIRTHDAY SCREEN -->
+        <section id="slide2" class="slide hidden min-h-screen flex flex-col justify-between items-center py-8 px-4 bg-gradient-to-br from-purple-950 via-purple-900 to-pink-600 relative overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(236,72,153,0.25)_0%,_transparent_70%)] pointer-events-none"></div>
+
+            <div class="text-center mt-2 z-10">
+                <h2 class="font-script text-3xl sm:text-5xl text-pink-200 drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Special Day for Special One</h2>
+            </div>
+
+            <!-- Central Envelope with Roses & Butterflies & Polaroids -->
+            <div class="relative my-auto w-full max-w-2xl flex justify-center items-center py-10">
+                
+                <!-- Floating Polaroid Photos Around -->
+                <div class="polaroid polaroid-1 absolute -left-2 sm:left-4 top-0 w-24 sm:w-36 bg-white p-2 rounded shadow-2xl transform -rotate-12 hover:rotate-0 hover:scale-110 z-20 transition duration-300">
+                    <img src="lea.jpeg" alt="Lea" class="w-full h-20 sm:h-32 object-cover rounded-sm">
+                    <p class="text-[10px] sm:text-xs text-gray-700 text-center mt-1 font-script">✨✨✨</p>
+                </div>
+
+                <div class="polaroid polaroid-2 absolute -right-2 sm:right-4 top-4 w-24 sm:w-36 bg-white p-2 rounded shadow-2xl transform rotate-12 hover:rotate-0 hover:scale-110 z-20 transition duration-300">
+                    <img src="Lia2.jpeg" alt="Lia 2" class="w-full h-20 sm:h-32 object-cover rounded-sm">
+                    <p class="text-[10px] sm:text-xs text-gray-700 text-center mt-1 font-script">✨✨✨</p>
+                </div>
+
+                <div class="polaroid polaroid-3 absolute bottom-0 left-12 sm:left-20 w-24 sm:w-32 bg-white p-2 rounded shadow-2xl transform rotate-6 hover:rotate-0 hover:scale-110 z-20 transition duration-300 hidden sm:block">
+                    <img src="Love.jpeg" alt="Love" class="w-full h-20 sm:h-28 object-cover rounded-sm">
+                    <p class="text-[10px] sm:text-xs text-gray-700 text-center mt-1 font-script">✨✨✨</p>
+                </div>
+
+                <!-- Open Envelope Graphics -->
+                <div class="relative bg-pink-100/90 text-purple-950 p-6 sm:p-8 rounded-xl shadow-[0_0_30px_rgba(236,72,153,0.5)] border-2 border-pink-300 text-center max-w-xs sm:max-w-md w-full z-10 backdrop-blur-sm">
+                    <!-- Rose Decoration -->
+                    <div class="absolute -top-5 -left-5 text-2xl sm:text-3xl text-pink-500 drop-shadow">🌹</div>
+                    <div class="absolute -top-5 -right-5 text-2xl sm:text-3xl text-pink-500 drop-shadow">🌹</div>
+                    <!-- Glowing Butterfly -->
+                    <div class="absolute -bottom-4 right-4 text-xl sm:text-2xl text-pink-400 animate-bounce">🦋</div>
+
+                    <h3 class="font-script text-3xl sm:text-4xl text-purple-900 mb-1 font-bold">Happy Birthday Liaaa</h3>
+                    <p class="text-lg sm:text-xl font-bold tracking-widest text-pink-600 font-mono">21.10.26</p>
+                </div>
+            </div>
+
+            <!-- Button TAP FOR SURPRISE -->
+            <div class="mb-8 z-30">
+                <button id="btnSurprise" class="px-8 py-3 rounded-full bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 text-white font-bold text-lg shadow-[0_0_20px_rgba(236,72,153,0.8)] hover:scale-105 active:scale-95 transition-all duration-300 animate-pulse tracking-wider">
+                    TAP FOR SURPRISE ✨
+                </button>
+            </div>
+        </section>
+
+
+        <!-- SLIDE 3: CHOOSE THE SURPRISE (MENU) -->
+        <section id="slide3" class="slide hidden min-h-screen flex flex-col justify-between items-center py-12 px-4 bg-gradient-to-br from-purple-950 via-indigo-950 to-pink-700 relative">
+            <div class="text-center mt-6 z-10">
+                <h1 class="font-script text-4xl sm:text-6xl text-pink-200 drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]">
+                    Choose the Surprise
+                </h1>
+                <p class="text-pink-100/70 mt-2 text-sm sm:text-base">Dari Butong Buat Lia✨</p>
+            </div>
+
+            <!-- Menu Cards Container -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 my-auto w-full max-w-4xl px-4 z-10">
+                
+                <!-- Menu Moment -->
+                <div id="menuMoment" class="menu-card bg-purple-900/40 border border-pink-400/30 p-6 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-pink-500/20 hover:border-pink-300 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)] transition duration-300 group">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 shadow-[0_0_15px_rgba(236,72,153,0.5)] transition duration-300">
+                        <i class="fa-solid fa-camera text-3xl text-white group-hover:rotate-12 transition duration-300"></i>
+                    </div>
+                    <span class="font-script text-2xl text-pink-200 group-hover:text-white">Moment</span>
+                </div>
+
+                <!-- Menu Playlist -->
+                <div id="menuPlaylist" class="menu-card bg-purple-900/40 border border-pink-400/30 p-6 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-pink-500/20 hover:border-pink-300 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)] transition duration-300 group">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 shadow-[0_0_15px_rgba(147,51,234,0.5)] transition duration-300">
+                        <i class="fa-solid fa-compact-disc text-3xl text-pink-300 animate-spin-slow group-hover:scale-110 transition"></i>
+                    </div>
+                    <span class="font-script text-2xl text-pink-200 group-hover:text-white">Playlist</span>
+                </div>
+
+                <!-- Menu Gift -->
+                <div id="menuGift" class="menu-card bg-purple-900/40 border border-pink-400/30 p-6 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-pink-500/20 hover:border-pink-300 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)] transition duration-300 group">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-red-500 to-pink-600 flex items-center justify-center mb-4 group-hover:scale-110 shadow-[0_0_15px_rgba(239,68,68,0.5)] transition duration-300">
+                        <i class="fa-solid fa-gift text-3xl text-amber-300 group-hover:bounce transition"></i>
+                    </div>
+                    <span class="font-script text-2xl text-pink-200 group-hover:text-white">Gift</span>
+                </div>
+
+            </div>
+
+            <div class="mb-6 text-pink-300/50 text-xs">Made by Butong for Aulia Ramadhani</div>
+        </section>
+
+
+        <!-- SLIDE 4: MOMENT GALLERY -->
+        <section id="slideMoment" class="slide hidden min-h-screen py-16 px-4 bg-gradient-to-br from-purple-950 via-purple-900 to-pink-600 relative overflow-hidden">
+            <!-- Back Button -->
+            <button class="btnBack fixed top-4 right-4 z-50 bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-4 py-2 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.7)] flex items-center gap-2 transition duration-300">
+                <span>BACK</span> ◀
+            </button>
+
+            <!-- Decorative Floating Stickers -->
+            <div class="absolute top-12 left-8 text-2xl text-pink-300 opacity-70 animate-bounce pointer-events-none">💖</div>
+            <div class="absolute top-1/3 right-6 text-3xl text-purple-300 opacity-60 animate-pulse pointer-events-none">🪐</div>
+            <div class="absolute bottom-16 left-10 text-3xl text-blue-300 opacity-70 animate-pulse pointer-events-none">🐬</div>
+            <div class="absolute top-1/2 left-4 text-2xl text-pink-400 opacity-60 animate-bounce pointer-events-none">✨</div>
+
+            <div class="text-center mb-10">
+                <h2 class="font-script text-4xl sm:text-5xl text-pink-200">Our Precious Moments</h2>
+                <p class="text-pink-300/80 text-xs sm:text-sm mt-1"></p>
+            </div>
+
+            <!-- Expanded Polaroid Grid Layout -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center pb-12">
+                
+                <!-- Foto lea1, lea2, lea3 -->
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('lea1.jpeg', 'Sweet Memories ✨')">
+                    <img src="lea1.jpeg" alt="Lea 1" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">✨✨✨</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('lea2.jpeg', 'Precious Day 🌸')">
+                    <img src="lea2.jpeg" alt="Lea 2" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌸🌸🌸</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('lea3.jpeg', 'Beautiful Angel 💖')">
+                    <img src="lea3.jpeg" alt="Lea 3" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">✨✨✨</p>
+                </div>
+
+                <!-- Foto Lia1, Lia3, Lia4 -->
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('Lia1.jpeg', 'Beautiful Memory ✨')">
+                    <img src="Lia1.jpeg" alt="Lia 1" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌸🌸🌸</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('Lia3.jpeg', 'Sweet Smile 😊')">
+                    <img src="Lia3.jpeg" alt="Lia 3" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">✨✨✨</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('Lia4.jpeg', 'Precious Moment 🌸')">
+                    <img src="Lia4.jpeg" alt="Lia 4" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌸🌸🌸</p>
+                </div>
+
+                <!-- Video Polaroid -->
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64">
+                    <video controls class="w-full h-56 object-cover rounded">
+                        <source src="Liak.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video.
+                    </video>
+                    <p class="text-center font-script text-gray-700 text-base mt-2">Video Memories 🎥</p>
+                </div>
+
+                <!-- Photos aul1 - aul9 -->
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul1.jpeg', 'Lovely Days ❤️')">
+                    <img src="aul1.jpeg" alt="Aul 1" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">☀️☀️☀️</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul2.jpeg', 'Sunlight & You ☀️')">
+                    <img src="aul2.jpeg" alt="Aul 2" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌺🌺🌺</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul3.jpeg', 'Happy Time 💫')">
+                    <img src="aul3.jpeg" alt="Aul 3" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">💫💫💫</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul4.jpeg', 'Cute Moment 🌺')">
+                    <img src="aul4.jpeg" alt="Aul 4" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌺🌺🌺</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul5.jpeg', 'Bright Smile 💖')">
+                    <img src="aul5.jpeg" alt="Aul 5" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">✨✨✨</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul6.jpeg', 'Warm Days ✨')">
+                    <img src="aul6.jpeg" alt="Aul 6" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">🌷🌷🌷</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul7.jpeg', 'Unforgettable 🌷')">
+                    <img src="aul7.jpeg" alt="Aul 7" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">👑👑👑</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul8.jpeg', 'Special One 👑')">
+                    <img src="aul8.jpeg" alt="Aul 8" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">💕💕💕</p>
+                </div>
+
+                <div class="polaroid bg-white p-3 rounded shadow-2xl transform rotate-1 hover:rotate-0 hover:scale-105 transition duration-300 w-64 cursor-pointer" onclick="openPhotoModal('aul9.jpeg', 'Always Charming 💕')">
+                    <img src="aul9.jpeg" alt="Aul 9" class="w-full h-56 object-cover rounded">
+                    <p class="text-center font-script text-gray-700 text-base mt-2">💫💫💫</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SLIDE 5: PLAYLIST (ABOUT YOU - THE 1975) -->
+        <section id="slidePlaylist" class="slide hidden min-h-screen py-16 px-4 bg-gradient-to-br from-purple-950 via-purple-900 to-pink-600 relative">
+            <!-- Back Button -->
+            <button class="btnBack fixed top-4 right-4 z-50 bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-4 py-2 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.7)] flex items-center gap-2 transition duration-300">
+                <span>BACK</span> ◀
+            </button>
+
+            <div class="text-center mb-8">
+                <h2 class="font-script text-4xl sm:text-5xl text-pink-200">Favorite Playlist</h2>
+                <p class="text-pink-300/80 text-sm">About You - The 1975</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                
+                <!-- Video Player Box & Retro Elements -->
+                <div class="flex flex-col items-center gap-4 w-full">
+                    <div class="w-full bg-black/60 p-3 rounded-2xl border border-pink-400/40 shadow-[0_0_25px_rgba(236,72,153,0.4)] relative group">
+                        <video id="playlistVideo" controls playsinline preload="auto" class="w-full rounded-xl aspect-video object-cover">
+                            <source src="aboutyou1975.mp4" type="video/mp4">
+                            Browser tidak mendukung pemutaran video.
+                        </video>
+                    </div>
+
+                    <!-- Boombox & Retro TV Container -->
+                    <div class="flex items-center justify-center gap-6 w-full mt-2">
+                        <!-- Boombox Icon -->
+                        <div class="bg-purple-900/50 p-4 rounded-xl border border-pink-300/30 text-center">
+                            <i class="fa-solid fa-radio text-3xl text-pink-400 mb-1"></i>
+                            <p class="text-[10px] text-pink-200"></p>
+                        </div>
+
+                        <!-- Retro TV Frame with aul.jpeg -->
+                        <div class="relative w-36 h-28 bg-amber-950 p-2 rounded-lg border-2 border-amber-700 shadow-lg flex flex-col justify-between">
+                            <div class="w-full h-20 bg-black rounded overflow-hidden relative">
+                                <img src="aul.jpeg" alt="TV Screen" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex justify-between items-center text-[8px] text-amber-200 px-1">
+                                <span>RETRO TV</span>
+                                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Vintage Photo Frame & Music Waves -->
+                <div class="flex flex-col items-center justify-center gap-6">
+                    <!-- Vintage Gold Photo Frame -->
+                    <div class="relative p-3 bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 rounded-lg shadow-2xl border-4 border-amber-600 max-w-xs">
+                        <div class="bg-white p-1 rounded">
+                            <img src="aulia.jpeg" alt="Aulia" class="w-full h-64 object-cover rounded">
+                        </div>
+                        <p class="text-center font-serif italic text-amber-950 font-bold text-sm mt-2">Aulia Ramadhani</p>
+                    </div>
+
+                    <!-- Glowing Music Waves -->
+                    <div class="flex items-center gap-1.5 h-12">
+                        <span class="w-1.5 bg-cyan-400 rounded-full animate-[bounce_1s_infinite_100ms] h-8 shadow-[0_0_8px_#22d3ee]"></span>
+                        <span class="w-1.5 bg-pink-500 rounded-full animate-[bounce_1s_infinite_200ms] h-12 shadow-[0_0_8px_#ec4899]"></span>
+                        <span class="w-1.5 bg-cyan-400 rounded-full animate-[bounce_1s_infinite_300ms] h-6 shadow-[0_0_8px_#22d3ee]"></span>
+                        <span class="w-1.5 bg-pink-500 rounded-full animate-[bounce_1s_infinite_400ms] h-10 shadow-[0_0_8px_#ec4899]"></span>
+                        <span class="w-1.5 bg-cyan-400 rounded-full animate-[bounce_1s_infinite_500ms] h-7 shadow-[0_0_8px_#22d3ee]"></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SLIDE 6: SPECIAL GIFT / LETTER -->
+        <section id="slideGift" class="slide hidden min-h-screen py-16 px-4 bg-gradient-to-br from-purple-950 via-purple-900 to-pink-600 relative">
+            <!-- Back Button -->
+            <button class="btnBack fixed top-4 right-4 z-50 bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-4 py-2 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.7)] flex items-center gap-2 transition duration-300">
+                <span>BACK</span> ◀
+            </button>
+
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                
+                <!-- Special Letter (Left) -->
+                <div class="relative bg-amber-50 text-gray-800 p-6 sm:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-2 border-amber-200">
+                    <h3 class="font-script text-3xl sm:text-4xl text-purple-900 mb-4 border-b border-amber-200 pb-2">Aulia Ramadhani</h3>
+                    <p class="font-serif leading-relaxed text-sm sm:text-base text-gray-700 whitespace-pre-line">
+                        "Selamat ulang tahun Aulia, Di hari spesialmu ini, aku cuma mau bilang Selamat ulang tahun ya, aku minta maaf sedalam dalamnya atas apa yang aku lakukan sampai kamu sebenci itu sama aku. Sekarang kita udah jauh banget ya Lia... bukan cuma jarak kita yang jauh, tetapi komunikasi kita juga udah jauh banget ya kaya kita ga pernah kenal satu sama lain, tapi kamu harus tau Lia, sejauh apapun aku melangkah pergi dari Kota mu, sejauh apapun aku sekarang di Surabaya ini, bayang bayangmu masih terus muncul Lia, Sehat selalu Ya.. Aku menunggu cerita-cerita hebat mu Lia.
+
+-Butong"
+                    </p>
+                    <!-- Rose Illustration Bottom Left -->
+                    <div class="absolute bottom-3 left-4 text-3xl text-red-600 drop-shadow">🌹</div>
+                </div>
+
+                <!-- Photo Frame & Music Controls (Right) -->
+                <div class="flex flex-col items-center gap-6">
+                    <!-- Vintage Gold Frame -->
+                    <div class="relative p-3 bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 rounded-xl shadow-2xl border-4 border-amber-700 max-w-xs">
+                        <div class="bg-white p-1 rounded relative">
+                            <img src="kucingaul.jpeg" alt="Kucing Aul" class="w-full h-64 object-cover rounded">
+                            <!-- Rose on Corner -->
+                            <div class="absolute -top-3 -right-3 text-3xl text-red-600">🌹</div>
+                        </div>
+                    </div>
+
+                    <!-- Retro Camera & Vinyl Record with Play Music Button -->
+                    <div class="flex items-center gap-4 bg-purple-950/60 p-4 rounded-xl border border-pink-400/30">
+                        <i class="fa-solid fa-camera-retro text-2xl text-pink-300"></i>
+                        <div class="flex items-center gap-3">
+                            <i id="giftVinylIcon" class="fa-solid fa-compact-disc text-3xl text-purple-300"></i>
+                            <button id="btnToggleMusic" class="px-4 py-1.5 bg-pink-600 hover:bg-pink-500 text-white rounded-full text-xs font-bold shadow flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-play" id="playIcon"></i> <span id="playText">Play Music</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal Preview Foto Saat Diklik -->
+    <div id="photoModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 cursor-pointer" onclick="closePhotoModal()">
+        <div class="bg-white p-4 sm:p-6 rounded-2xl max-w-sm sm:max-w-lg w-full relative transform transition-all duration-300 scale-95" onclick="event.stopPropagation()">
+            <button onclick="closePhotoModal()" class="absolute -top-3 -right-3 bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shadow-lg hover:bg-pink-700">✕</button>
+            <img id="modalImg" src="" alt="Preview" class="w-full max-h-[70vh] object-contain rounded-lg">
+            <p id="modalCaption" class="text-center font-script text-gray-800 text-xl sm:text-2xl mt-3"></p>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
